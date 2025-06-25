@@ -1,5 +1,6 @@
 # Define the C++ compiler
 CXX = g++
+
 # Compiler flags: set C++11 standard and use pkg-config to get OpenCV compile flags.
 CXXFLAGS = -std=c++11 `pkg-config --cflags opencv4`
 
@@ -7,12 +8,14 @@ CXXFLAGS = -std=c++11 `pkg-config --cflags opencv4`
 LDFLAGS = `pkg-config --libs opencv4`
 
 # Name of the executable
-TARGET = localHistogram
+TARGET = matrixGeneration
 
 # Default target: build the executable
 all: $(TARGET)
 
 # Link the object file(s) to create the executable
+# Target : Prerequisit/dependency
+# If the file $(TARGET) is either updated or missing everything is rebuilt
 $(TARGET): main.o
 	$(CXX) -o $(TARGET) main.o $(LDFLAGS)
 
