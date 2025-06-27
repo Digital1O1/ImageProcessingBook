@@ -123,7 +123,7 @@ int main()
                     */
                     // Get the value from the kernel (0–2 range)
                     int kernelVal = kernel[kRow + 1][kCol + 1];
-                    // Get the corresponding value from the 3×3 region centered at (row, col) in the matrix.
+                                        // Get the corresponding value from the 3×3 region centered at (row, col) in the matrix.
                     int matrixVal = targetMatrix[row + kRow][col + kCol];
                     sum += kernelVal * matrixVal;
                 }
